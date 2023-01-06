@@ -208,7 +208,7 @@ int main()
 {
 	solution test;
 	vector<int>nums1 = { 0 }, nums2 = { 3,2,4 };
-	nums1 = test.twoSum(nums2, 6);
+	
 	for (auto it : nums1)
 	{
 		cout << it;
