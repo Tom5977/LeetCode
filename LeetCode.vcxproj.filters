@@ -15,8 +15,19 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Eazy.cpp">
+    <ClCompile Include="test.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
+    <ClCompile Include="Eazy_string.h">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Eazy_array.h">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Header.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

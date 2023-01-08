@@ -1,13 +1,7 @@
-#include<vector>
-#include<map>
-#include<set>
-#include<iostream>
-#include<algorithm>
+#pragma once
+#include"Header.h"
 
-using namespace std;
-
-
-class solution 
+class solution_array 
 {
 public:
 
@@ -202,20 +196,77 @@ public:
 		return nums;
 		
 	}
+
+	bool isValidSudoku(vector<vector<char>>& board) {
+		set<char> check;
+		for (int i = 0; i < 9; i++)
+		{
+			for (int j = 0; j < 9; j++)
+			{
+				
+				if (board[i][j] != '.')
+				{
+					if (check.count(board[i][j]) == 1)
+					{
+						return false;
+					}
+					else
+					{
+						check.insert(board[i][j]);
+					}
+				}
+			}
+			check.clear();
+			for (int j = 0; j < 9; j++)
+			{
+				
+				if (board[j][i] != '.')
+				{
+					if (check.count(board[j][i]) == 1)
+					{
+						return false;
+					}
+					else
+					{
+						check.insert(board[j][i]);
+					}
+				}
+			}
+			check.clear();
+			for (int j = 0; j < 9; j++)
+			{
+				
+				char tmp = board[(i / 3) * 3 + j / 3][(i % 3) * 3 + j % 3];
+				if (tmp != '.')
+				{
+					if (check.count(tmp) == 1)
+					{
+						return false;
+					}
+					else
+					{
+						check.insert(tmp);
+					}
+				}
+			}
+			check.clear();
+		}
+		return true;
+	}
+
+	void rotate(vector<vector<int>>& matrix) {
+		int size = matrix.size();
+		for (int i = 0; i < size / 2; i++)
+		{
+			for (int j = i; j < size - 1 - i; j++)
+			{
+				int tmp = matrix[i][j];
+				matrix[i][j] = matrix[size - 1 - j][i];
+				matrix[size - 1 - j][i] = matrix[size - 1 - i][size - 1 - j];
+				matrix[size - 1 - i][size - 1 - j] = matrix[j][size - 1 - i];
+				matrix[j][size - 1 - i] = tmp;
+			}
+		}
+	}
 };
 
-int main()
-{
-	solution test;
-	vector<int>nums1 = { 0 }, nums2 = { 3,2,4 };
-	
-	for (auto it : nums1)
-	{
-		cout << it;
-	}
-	
-	
-	
-	
-
-}
