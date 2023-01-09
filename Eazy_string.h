@@ -272,4 +272,66 @@ public:
 		}
 		return -1;
 	}
+
+	string countAndSay(int n) {
+		string buf = "1";
+		for (int i = 1; i < n; i++)
+		{
+			string tmp;
+			int count = 1;
+			char check = buf[0];
+			for (int j = 1; j < buf.size(); j++)
+			{
+				if (buf[j] == check)
+				{
+					count++;
+				}
+				else
+				{
+					tmp.push_back(count + 48);
+					tmp.push_back(check);
+					count = 1;
+					check = buf[j];
+				}
+			}
+			tmp.push_back(count + 48);
+			tmp.push_back(check);
+			buf = tmp;
+		}
+		return buf;
+	}
+
+	string longestCommonPrefix(vector<string>& strs) {
+		int min = strs[0].size();
+		string re;
+		for (int i = 1; i < strs.size(); i++)
+		{
+			if (strs[i].size() < min)
+			{
+				min = strs[i].size();
+			}
+		}
+		for (int i = 0; i < min; i++)
+		{
+			char check = strs[0][i];
+			bool same = 1;
+			for (int j = 0; j < strs.size(); j++)
+			{
+				if (strs[j][i] != check)
+				{
+					same = 0;
+					break;
+				}
+			}
+			if (same)
+			{
+				re.push_back(check);
+			}
+			else
+			{
+				break;
+			}
+		}
+		return re;
+	}
 };
