@@ -147,4 +147,129 @@ public:
 		}
 		return true;
 	}
+
+	int myAtoi(string s) {
+		int i = 0, sigh = 0;
+		vector<int> re;
+		while (s[i] == ' ')
+		{
+			i++;
+		}
+		if (s[i] == '-')
+		{
+			sigh = -1;
+			i++;
+		}
+		else if (s[i] == '+')
+		{
+			sigh = 1;
+			i++;
+		}
+		else
+		{
+			sigh = 1;
+		}
+		while (s[i] == '0')
+		{
+			i++;
+		}
+		while (isdigit(s[i]))
+		{
+			re.push_back(s[i] - 48);
+			i++;
+		}
+		
+		int outLimit = -1;
+		if (re.size() < 10)
+		{
+			outLimit = 0;
+		}
+		else if (re.size() == 10)
+		{
+			vector<int> limit = { 2,1,4,7,4,8,3,6,4,7 };
+			for (int i = 0; i < 9; i++)
+			{
+				if (re[i] > limit[i])
+				{
+					outLimit = 1;
+					break;
+				}
+				else if (re[i] < limit[i])
+				{
+					outLimit = 0;
+					break;
+				}
+			}
+			if (outLimit == -1)
+			{
+				if (sigh == 1)
+				{
+					if (re[9] >= limit[9])
+					{
+						outLimit = 1;
+					}
+
+				}
+				else
+				{
+					if (re[9] >= limit[9] + 1)
+					{
+						outLimit = 1;
+					}
+
+				}
+			}
+		}
+		else
+		{
+			outLimit = 1;
+		}
+		int result = 0;
+		if (outLimit == 1)
+		{
+			if (sigh == 1)
+			{
+				return pow(2, 31) - 1;
+			}
+			else
+			{
+				return -pow(2, 31);
+			}
+		}
+		else
+		{
+			
+			for (int i = 0; i < re.size(); i++)
+			{
+				result += re[i] * pow(10, re.size() - 1 - i);
+			}
+		}
+		return result * sigh;
+		
+
+	}
+
+	int strStr(string haystack, string needle) {
+		int i = 0, j = 0;
+		if (haystack.size() >= needle.size())
+		while (i <= haystack.size() - needle.size())
+		{
+			bool match = 1;
+			for (int j = 0; j < needle.size(); j++)
+			{
+				if (haystack[i] != needle[j])
+				{
+					match = 0;
+					i = i + 1 - j;
+					break;
+				}
+				i++;
+			}
+			if (match == 1)
+			{
+				return i - needle.size();
+			}
+		}
+		return -1;
+	}
 };
