@@ -1,12 +1,16 @@
 #include "Eazy_array.h"
 #include "Eazy_string.h"
+#include "Eazy_linkLisk.h"
 
 int main()
 {
 	solution_string test;
-	int i = -123;
-	string r = "0P";
-	map<char, int> m = { {'c', 2},{'r', 5} };
-	r.append("fe");
-	cout << r;
+	vector<int> v = { 4,5,1,9 };
+	ListNode* head = new ListNode(0);
+	for (int i = 0; i < v.size(); i++)
+	{
+		ListNode* p = new ListNode(v[i]);
+		p->next = head->next;
+		head->next = p;
+	}
 }
