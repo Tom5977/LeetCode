@@ -35,5 +35,8 @@
     <ClInclude Include="Eazy_tree.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Eazy_sortAndSearch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
