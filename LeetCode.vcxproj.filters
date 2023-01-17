@@ -41,5 +41,8 @@
     <ClInclude Include="Eazy_dynamicPlan.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Eazy_others.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

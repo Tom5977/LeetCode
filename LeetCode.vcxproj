@@ -146,6 +146,7 @@
   <ItemGroup>
     <ClInclude Include="Eazy_dynamicPlan.h" />
     <ClInclude Include="Eazy_linkLisk.h" />
+    <ClInclude Include="Eazy_others.h" />
     <ClInclude Include="Eazy_sortAndSearch.h" />
     <ClInclude Include="Eazy_tree.h" />
     <ClInclude Include="Header.h" />

@@ -6,5 +6,6 @@
 #include<iostream>
 #include<algorithm>
 #include<queue>
+#include<string>
 
 using namespace std;
