@@ -2,13 +2,12 @@
 #include "Eazy_string.h"
 #include "Eazy_linkLisk.h"
 #include "Eazy_sortAndSearch.h"
-
+#include "Eazy_others.h"
 int main()
 {
-	solution_sortAndSearch test;
+	Solution test;
 	vector<int> v = { 4,5,1,9 };
 	v.insert(v.begin() + 1, 9);
-	unsigned i = 2147483647;
-	cout << test.climbStairs(44);
-	
+	double r = abs(-243);
+	cout << test.isPowerOfThree(243);
 }

@@ -96,4 +96,71 @@ public:
 		}
 		return cnt;
 	}
+
+	bool isPowerOfThree(int n) {
+		/*if (n == 0)
+		{
+			return false;
+		}
+		double m = n;
+		double r = log(m) / log(3);
+
+		if ((int)r == r)
+		{
+			if (n < 0 && (int)r % 2 == 0)
+			{
+				return false;
+			}
+			return true;
+		}
+		return false;*/
+		if (n < 1)
+		{
+			return false;
+		}
+		while (n > 1)
+		{
+			if (n % 3 == 0)
+			{
+				n /= 3;
+			}
+			else
+			{
+				return false;
+			}
+		}
+		return true;
+	}
+
+	int romanToInt(string s) {
+		map<string, int> roma;
+		roma["I"] = 1;
+		roma["IV"] = 4;
+		roma["IX"] = 9;
+		roma["V"] = 5;
+		roma["X"] = 10;
+		roma["XL"] = 40;
+		roma["XC"] = 90;
+		roma["L"] = 50;
+		roma["C"] = 100;
+		roma["CD"] = 400;
+		roma["CM"] = 900;
+		roma["D"] = 500;
+		roma["M"] = 1000;
+		int size = s.size(), sum = 0;
+		for (int i = 0; i < size; i++)
+		{
+			if (roma.find(s.substr(i,2)) != roma.end())
+			{
+				sum += roma[s.substr(i, 2)];
+				i++;
+			}
+			else
+			{
+				sum += roma[s.substr(i, 1)];
+			}
+		}
+		return sum;
+	
+	}
 };
