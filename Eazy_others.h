@@ -163,4 +163,108 @@ public:
 		return sum;
 	
 	}
+
+	int hammingWeight(uint32_t n) {
+		int cnt = 0;
+		while (n != 0)
+		{
+			if (n % 2 == 1)
+			{
+				cnt++;
+			}
+			n = n >> 1;
+		}
+		return cnt;
+	}
+
+	int hammingDistance(int x, int y) {
+		int cnt = 0;
+		while (x != 0 ||y != 0)
+		{
+			if (x % 2 != y % 2)
+			{
+				cnt++;
+			}
+			x /= 2;
+			y /= 2;
+		}
+		return cnt;
+	}
+
+	uint32_t reverseBits(uint32_t n) {
+		uint32_t re = 0;
+		for (int i = 0; i < 32; i++)
+		{
+			re += n % 2 == 1 ? pow(2, 31 - i) : 0;
+			n /= 2;
+		}
+		return re;
+	}
+
+	vector<vector<int>> generate(int numRows) {
+		vector<vector<int>> re;
+		vector<int> first = { 1 };
+		vector<int> bas = { 1, 1 };
+		re.push_back(first);
+		
+		if (numRows > 1)
+		{	
+			re.push_back(bas);
+			for (int i = 2; i < numRows; i++)
+			{
+				vector<int> tmp = { 1 };
+				for (int j = 0; j < bas.size() - 1; j++)
+				{
+					tmp.push_back(bas[j] + bas[j + 1]);
+				}
+				tmp.push_back(1);
+				re.push_back(tmp);
+				bas = tmp;
+			}
+		}
+		return re;
+
+	}
+
+	bool isValid(string s) {
+		vector<char> x;
+		for (int i = 0; i < s.size(); i++)
+		{
+			if (x.size() != 0)
+			{
+				if (x[x.size() - 1] == '(' && s[i] == ')' 
+				|| x[x.size() - 1] == '[' && s[i] == ']'
+				|| x[x.size() - 1] == '{' && s[i] == '}')
+				{
+					x.pop_back();
+				}
+				else
+				{
+					x.push_back(s[i]);
+				}
+			}
+			else
+			{
+				x.push_back(s[i]);
+
+			}
+			
+			
+		}
+		if (x.empty())
+		{
+			return true;
+		}
+		return false;
+	}
+
+	int missingNumber(vector<int>& nums) {
+		int sum = 0, size = nums.size();
+		for (int i = 0; i < size; i++)
+		{
+			sum += nums[i];
+		}
+		return (1 + size) * size / 2 - sum;
+
+	}
 };
