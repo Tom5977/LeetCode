@@ -13,35 +13,44 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\Eazy">
+      <UniqueIdentifier>{044d7d2e-5410-4af7-92f3-b2eb8b246591}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Medium">
+      <UniqueIdentifier>{8a06836d-4a86-4b46-abb7-542656c008d6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="test.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
-    <ClCompile Include="Eazy_string.h">
-      <Filter>Header Files</Filter>
-    </ClCompile>
     <ClCompile Include="Eazy_array.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Eazy</Filter>
+    </ClCompile>
+    <ClCompile Include="Eazy_string.h">
+      <Filter>Header Files\Eazy</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Header.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Eazy_dynamicPlan.h">
+      <Filter>Header Files\Eazy</Filter>
     </ClInclude>
     <ClInclude Include="Eazy_linkLisk.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Eazy_tree.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Eazy_sortAndSearch.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Eazy_dynamicPlan.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Eazy</Filter>
     </ClInclude>
     <ClInclude Include="Eazy_others.h">
+      <Filter>Header Files\Eazy</Filter>
+    </ClInclude>
+    <ClInclude Include="Eazy_sortAndSearch.h">
+      <Filter>Header Files\Eazy</Filter>
+    </ClInclude>
+    <ClInclude Include="Eazy_tree.h">
+      <Filter>Header Files\Eazy</Filter>
+    </ClInclude>
+    <ClInclude Include="Medium_list.h">
+      <Filter>Header Files\Medium</Filter>
+    </ClInclude>
+    <ClInclude Include="Header.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

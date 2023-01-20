@@ -150,6 +150,7 @@
     <ClInclude Include="Eazy_sortAndSearch.h" />
     <ClInclude Include="Eazy_tree.h" />
     <ClInclude Include="Header.h" />
+    <ClInclude Include="Medium_list.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
