@@ -14,6 +14,7 @@ int main()
 	/*vector<vector<int>> re;
 	re.push_back({ 2, 3 });*/
 	vector<int> n = { -1,0,1,2,-1,-4};
-	test.threeSum(n);
+	vector<int> j(n.begin() + 6, n.end());
+	cout << j.size();
 
 }

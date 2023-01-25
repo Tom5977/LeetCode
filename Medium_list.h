@@ -73,4 +73,54 @@ public:
 			}
 		}
 	}
+
+	vector<vector<string>> groupAnagrams(vector<string>& strs) {
+		vector<string> tmp(strs);
+		for (int i = 0; i < tmp.size(); i++)
+		{
+			sort(tmp[i].begin(), tmp[i].end());
+		}
+		map<string, int> save;
+		vector<vector<string>> re;
+		int c = 0;
+		for (int i = 0; i < tmp.size(); i++)
+		{
+			if (save.find(tmp[i]) == save.end())
+			{
+				save[tmp[i]] = c;
+				c++;
+				vector<string> row = { strs[i] };
+				re.push_back(row);
+			}
+			else
+			{
+				re[save[tmp[i]]].push_back(strs[i]);
+			}
+		}
+		return re;
+	}
+
+	int lengthOfLongestSubstring(string s) {
+		vector<char> tmp;
+		int max = 0;
+		for (int i = 0; i < s.size(); i++)
+		{
+			for (int j = 0; j < tmp.size(); j++)
+			{
+				if (tmp[j] == s[i])
+				{
+					vector<char> chg(tmp.begin() + j + 1, tmp.end());
+					tmp = chg;
+					break;
+				}
+			}
+			tmp.push_back(s[i]);
+			if (tmp.size() > max)
+			{
+				max = tmp.size();
+				
+			}
+		}
+		return max;
+	}
 };
