@@ -123,4 +123,8 @@ public:
 		}
 		return max;
 	}
+
+	string longestPalindrome(string s) {
+		return s;
+	}
 };
