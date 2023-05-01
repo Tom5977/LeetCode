@@ -31,7 +31,10 @@ public:
 		}
 	}
 
-	bool isBadVersion(int version){}
+	bool isBadVersion(int version){
+		return true;
+		}
+
 	int firstBadVersion(int n) {
 		int start = 1, end = n;
 		while (start < end) {
